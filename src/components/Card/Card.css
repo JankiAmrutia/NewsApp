@@ -1,0 +1,60 @@
+.tile {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    position: relative;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.tile-content {
+    background-color: #efefef;
+    padding: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 100%;
+    background: white;
+}
+
+.tile-title {
+    font-family: open sans;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+
+.tile-price {
+    font-family: open sans light;
+    margin: 0
+}
+
+.tile-img {
+    width: 100%
+}
+
+.tile-img img{
+  width: 100%;
+}
+
+.title-link{
+    font-size: 18px;
+    background: green;
+    color: white;
+}
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.tile-title-content{
+    position: relative;
+    display: inline-block;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.6em; /* (Number of lines you want visible) * (line-height) */
+    line-height: 1.2em;
+    text-align:justify;
+}
