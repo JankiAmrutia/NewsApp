@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Tabs.css';
 
+//Component to display tabs
 class Tabs extends Component {
     loadData = (data) => {
         this.props.changedTab(data);

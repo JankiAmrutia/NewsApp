@@ -9,7 +9,7 @@ const OPTIONS = [
   'hot'
 ];
 
-// Stateful Component to display the list of albums
+// Stateful Component to display the list of news albums
 class NewsDashboard extends Component {
   constructor(props) {
     super(props);
