@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../../components/Card/Card';
 import Header from '../../components/Header/Header';
-import data from '../../data/data.json';
 import Tabs from '../../components/Tabs/Tabs';
 import axios from 'axios';
 
@@ -10,6 +9,7 @@ const OPTIONS = [
   'rising',
   'hot'
 ];
+
 // Stateful Component to display the list of albums
 class NewsDashboard extends Component {
   constructor(props) {
@@ -20,41 +20,24 @@ class NewsDashboard extends Component {
   }
 
   componentDidMount(){
-    let url = 'https://mashable.com/stories.json'
-    return axios(url, {
-      method: 'GET',
-      mode: 'cors',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        // 'Access-Control-Allow-Credentials': true,
-        'Content-Type': 'application/json'
-        // ,
+    fetch('https://mashable.com/stories.json?hot_per_page=2&new_per_page=20&rising_per_page=3&channel=tech&new_after&1Dvhfi')
+    .then(response => {
+      if (response.ok) {
+        return Promise.resolve(response);
+      } else {
+        return Promise.reject(new Error('Failed to load'));
       }
-      // ,
-      // withCredentials: true,
-      // credentials: 'same-origin',
-    }).then(response => {
-      console.log(response)
     })
-   
-    // fetch('https://mashable.com/stories.json',{mode: 'cors'})
-    //   .then(response => {
-    //     if (response.ok) {
-    //       return Promise.resolve(response);
-    //     } else {
-    //       return Promise.reject(new Error('Failed to load'));
-    //     }
-    //   })
-    //   .then(response => response.json()) // parse response as JSON
-    //   .then(data => {
-    //     let finalData = this.formatData(data);
-    //     this.setState({
-    //       data: finalData.feed
-    //     })
-    //   })
+    .then(response => response.json()) // parse response as JSON
+    .then(data => {
+      this.setState({
+        data
+      })
+    })
   }
 
   changedTab = (data) => {
+   
     this.setState({
       selectedTab: data
     })
@@ -66,8 +49,8 @@ class NewsDashboard extends Component {
         <Header />
         <Tabs options = {OPTIONS} changedTab={this.changedTab}/>
         <div>
-          {(data && data[this.state.selectedTab]) ?
-          (  data[this.state.selectedTab]
+          {(this.state.data && this.state.data[this.state.selectedTab]) ?
+          (  this.state.data[this.state.selectedTab]
             .map((show, index) => <Card key={show._id} {...show} />)) : ''}
         </div>
       </div>
