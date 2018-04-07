@@ -35,8 +35,9 @@ class NewsDashboard extends Component {
     })
   }
 
+
+
   changedTab = (data) => {
-   
     this.setState({
       selectedTab: data
     })

@@ -2,6 +2,7 @@ import React from 'react';
 import './Card.css';
 
 // Stateless Component which displays the data as a tile
+
 const Card = (props) =>(
     <div className="tile">
       <div className="tile-img">
