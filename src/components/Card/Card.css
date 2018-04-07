@@ -1,7 +1,7 @@
 .tile {
     display: inline-block;
     width: 30%;
-    height: 60vh;
+    height: 68vh;
     margin: 10px;
     position: relative;
     border-radius: 4px;
@@ -19,7 +19,8 @@
 }
 
 .tile-title {
-    font-family: open sans;
+    color:lightgrey;
+    float: left;
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
@@ -28,7 +29,6 @@
 }
 
 .tile-price {
-    font-family: open sans light;
     margin: 0
 }
 
@@ -39,11 +39,13 @@
 .tile-img img{
   width: 100%;
 }
+.link{
+    padding:30px;
+}
 
 .title-link{
     font-size: 18px;
-    background: green;
-    color: white;
+    color: green;
 }
 .helper {
     display: inline-block;

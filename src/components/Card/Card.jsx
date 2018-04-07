@@ -9,10 +9,10 @@ const Card = (props) =>(
         <img src={props.image} alt='Loading..'/>
       </div>
       <div className="tile-content">
-        <h3 className="tile-title">{props.author}</h3>
-        <p className="tile-price">{props.title}</p>
+        <h2 className="tile-price">{props.title}</h2>
         <p className="tile-title-content">{props.content.plain}</p>
-        <a className="title-link" target="_blank" href={props.link}> Read More </a>
+        <h3 className="tile-title">Author:{props.author}</h3>
+       <div className="link"> <a className="title-link" target="_blank" href={props.link}> Continue Reading </a></div>
       </div>
     </div>
 );

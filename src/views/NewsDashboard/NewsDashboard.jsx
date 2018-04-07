@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Card from '../../components/Card/Card';
 import Header from '../../components/Header/Header';
 import Tabs from '../../components/Tabs/Tabs';
-import axios from 'axios';
 
 const OPTIONS = [
   'new',
